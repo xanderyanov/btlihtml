@@ -1,0 +1,186 @@
+@import "mmxins.less";
+
+h1,
+h2,
+h3,
+h4 {
+  color: #000;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+h1 {
+  font-size: 84px;
+}
+
+h2 {
+  font-size: 45px;
+}
+
+h3 {
+  font-size: 36px;
+}
+
+h4 {
+  font-size: 30px;
+}
+
+.text1 {
+
+  p,
+  ul,
+  ol,
+  blockquote,
+  table,
+  ol li:before {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: normal;
+  }
+}
+
+.text2 {
+
+  p,
+  ul,
+  ol,
+  blockquote,
+  table,
+  ol li:before {
+    font-size: 28px;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+
+.text4 {
+
+  p,
+  ul,
+  ol,
+  blockquote,
+  table,
+  ol li:before {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+
+.text5 {
+
+  p,
+  ul,
+  ol,
+  blockquote,
+  table,
+  ol li:before {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: normal;
+  }
+}
+
+
+
+.content_xxl ul li {
+  list-style-image: url(../img/ulbg.png);
+}
+
+
+
+.content blockquote,
+.content blockquote p {
+  color: #470700;
+  border-left: 7px solid #ff2d00;
+  padding: 10px 20px;
+  background: #fcbc04;
+}
+
+.content a {
+  color: #ff2d00;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.content b,
+.content strong {
+  font-weight: 700;
+}
+
+.content i,
+.content cite,
+.content em,
+.content var,
+.content address,
+.content dfn {
+  font-style: italic;
+}
+
+.content table th,
+.content table td {
+  padding: 10px;
+  border: 1px solid #470700;
+}
+
+.content ol {
+  counter-reset: li;
+  padding: 0;
+  list-style: none;
+  margin: 20px 0;
+}
+
+.content ol li {
+  position: relative;
+  margin: 0;
+  padding-left: 30px;
+  color: #363636;
+  /*font-size: 16px;*/
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.content ol li:before {
+  content: counter(li) ".";
+  counter-increment: li;
+  position: absolute;
+  left: 0;
+  width: 25px;
+  text-align: right;
+  display: inline-block;
+  color: #987d5c;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+table.clear {
+  border-collapse: collapse;
+  margin-bottom: 15px;
+}
+
+table.clear td {
+  text-align: center;
+  vertical-align: middle;
+  border: 0;
+}
+
+.content img {
+  max-width: 100%;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+sup {
+  vertical-align: super;
+  font-size: smaller;
+}
+
+sub {
+  vertical-align: text-bottom;
+  font-size: smaller;
+}
+
+strong {
+  font-weight: 700;
+}
