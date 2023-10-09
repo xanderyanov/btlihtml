@@ -20,6 +20,7 @@ function initVars() {
 
 $(function () {
   initVars();
+  mainGallery();
 
   $('a[data-fancybox]').fancybox({
     closeBtn: false,
@@ -102,6 +103,26 @@ $(function () {
   swiper1.on('beforeSlideChangeStart', function () {
     console.log('beforeSlideChangeStart');
   });
+
+  // var swiper = new Swiper('.mainGallery-container', {
+  //   pagination: '.mainGallery__pagination',
+  //   paginationClickable: true,
+  //   effect: 'coverflow',
+  //   loop: true,
+  //   centeredSlides: true,
+  //   slidesPerView: 1.5,
+  //   lazyLoading: true,
+  //   lazyLoadingInPrevNext: true,
+  //   speed: 1000,
+  //   additionalSlide: 1,
+  //   coverflow: {
+  //     rotate: 0,
+  //     stretch: 150,
+  //     depth: 200,
+  //     modifier: 1,
+  //     slideShadows: false,
+  //   },
+  // });
 
   var commentsOptions = {};
   if ($('.commentsCaroucel-container .commentsCaroucel-slide').length) {

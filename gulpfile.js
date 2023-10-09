@@ -120,7 +120,11 @@ gulp.task('vendorsJs', function () {
   );
 });
 
-var myjsfiles = ['src/assets/js/main.js', 'src/assets/js/__resize.js'];
+var myjsfiles = [
+  'src/assets/js/__gal.js',
+  'src/assets/js/main.js',
+  'src/assets/js/__resize.js',
+];
 
 gulp.task('myJs', function () {
   return (
@@ -155,11 +159,11 @@ gulp.task('fonts', function () {
 //     .pipe(gulp.dest('build/btlassets/css'));
 // });
 
-// gulp.task('icomoon', function () {
-//   return gulp
-//     .src('src/assets/icomoon/**/*.*')
-//     .pipe(gulp.dest('build/btlassets/icomoon'));
-// });
+gulp.task('icomoon', function () {
+  return gulp
+    .src('src/assets/icomoon/**/*.*')
+    .pipe(gulp.dest('build/assets/icomoon'));
+});
 
 // gulp.task('video', function () {
 //   return gulp
@@ -175,7 +179,16 @@ gulp.task(
   'build',
   gulp.series(
     'clean',
-    gulp.parallel('css', 'vendorsCss', 'pug', 'image', 'vendorsJs', 'myJs')
+    gulp.parallel(
+      'css',
+      'vendorsCss',
+      'pug',
+      'image',
+      'fonts',
+      'icomoon',
+      'vendorsJs',
+      'myJs'
+    )
   )
 );
 

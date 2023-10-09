@@ -4,6 +4,7 @@
 
 include __const
 include __header
+include __gal
 include __forms
 include __footer
 
@@ -17,9 +18,18 @@ html(lang="ru-RU")
 body
   .site
     .site__header
-      +header
+      //- +header
+
 
     .site__center
+      //- .firstScreen(style="background-image: url(assets/img/bg1.png)") 
+      //-   .firstScreen__info
+      //-     h1 Имидж студия Бьюти Лаунж
+      //-     span Твой образ от «А» до «Я»
+      //-     .bigBtn.bigBtn_first Записаться
+      +mainGal
+
+
 
     .site__footer
       +footer

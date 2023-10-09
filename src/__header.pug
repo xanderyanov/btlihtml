@@ -1,55 +1,25 @@
 mixin header 
-  .cont.topLine__area
-    .topLine.wcont
-      .topLine__item 
-        i.fa.fa-map-marker
-        span 410012, г. Саратов, ул. Московская, д. 117
-      .topLine__item 
-        i.fa.fa-clock-o
-        span ежедневно с 9:00 до 18:00
-      .topLine__itemGroup
-        .topLine__item 
-          i.fa.fa-phone
-          a(href="tel:+78452759955") +7 (8452) 75-99-55
-        .topLine__item 
-          i.fa.fa-envelope-o
-          a(href="mailto:info@keros-med.ru") info@keros-med.ru
+  .header__area 
+    header.header.w 
+      .logo1
+        a(href="#")
+          +logo1
+      .header__i 
+        a.i__item(href="#") 
+          i.icon-tg
+        a.i__item(href="#") 
+          i.icon-ws
+      .header__addr Саратов, ул. Московская, 117, 2 этаж, ТК «Мир»
+      a.header__phone(href="tel:+78452759933")  +7 (8452)75-99-33
 
-  
-  
-  
-  .cont.header__area 
-    header.header.wcont
-      .logo1 
-        //- a(href="#")
-          //- img(src="assets/img/meddix_logo_or_bl.svg", alt="") 
-        span.gr Кэрос
-        span.or MED
-
-
-      .slogan 
-        span Разработка программных продуктов
-        span(style="color: var(--or);") для косметологических клиник
-
-      //- ul.topMenu
-        li
-          a.active(href="") Главная
-        li
-          a(href="") Услуги
-          ul
-            li
-              a(href="") Разработка ПО
-            li
-              a(href="") Внедрение ПО
-            li
-              a(href="") Обучение сотрудников
-        li
-          a(href="") Цены
-        li
-          a(href="") Информация
-        li
-          a(href="") Контакты
-
-
-
-
+    ul.topMenu.w
+      li
+        a(href="#") Портфолио
+      li
+        a(href="#") Специалисты
+      li
+        a(href="#") Отзывы
+      li
+        a(href="#") Прайс
+      li
+        a(href="#") Контакты
