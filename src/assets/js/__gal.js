@@ -30,15 +30,18 @@ function mainGallery() {
           slidesPerView: 2,
           // spaceBetween: 10,
         },
-        768: {
+        769: {
           slidesPerView: 3,
           // spaceBetween: 15,
         },
-        1024: {
+        1025: {
+          slidesPerView: 3.5,
+        },
+        1201: {
           slidesPerView: 4,
         },
-        1080: {
-          // spaceBetween: 20,
+        1921: {
+          slidesPerView: 5,
         },
       },
       on: {
@@ -65,7 +68,19 @@ function mainGallery() {
 function updateClasses({ $el, slides, activeIndex }) {
   $el.find('.swiper-slide-prev-prev').removeClass('swiper-slide-prev-prev');
   slides.eq(activeIndex).prev().prev().addClass('swiper-slide-prev-prev');
+  slides
+    .eq(activeIndex)
+    .prev()
+    .prev()
+    .prev()
+    .addClass('swiper-slide-prev-prev');
 
   $el.find('.swiper-slide-next-next').removeClass('swiper-slide-next-next');
   slides.eq(activeIndex).next().next().addClass('swiper-slide-next-next');
+  slides
+    .eq(activeIndex)
+    .next()
+    .next()
+    .next()
+    .addClass('swiper-slide-next-next');
 }
