@@ -1,0 +1,164 @@
+.mastersTagMenu__outer {
+  width: 100%;
+  padding: 0 0 25px;
+}
+
+.mastersTagMenu {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -5px;
+}
+
+.menuCategoryMastersLink {
+  padding: 6px 20px;
+  margin: 5px;
+  text-decoration: none;
+  transition: all 0.3s;
+  border: 1px solid #e0e0e0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #4f4f4f;
+  border-radius: 50px;
+  list-style: none;
+  cursor: pointer;
+}
+
+.menuCategoryMastersLink:hover {
+  box-shadow: 0px 10px 20px rgb(196 187 234 / 45%);
+}
+
+.menuCategoryMastersLink.active {
+  background: var(--color1);
+  color: #fff;
+}
+
+.menuCategoryMastersLink span {
+  font-size: 16px;
+
+  .at-max(600px, {
+		font-size: 14px;
+	});
+}
+
+.mastersBox {
+  display: flex;
+  margin: 0 -10px;
+  flex-wrap: wrap;
+}
+
+.mastersBox__itemOuter {
+  width: 33.333%;
+  padding: 10px;
+}
+
+.mastersBox__itemOuter.hidden {
+  display: none;
+}
+
+.mastersBox__itemOuter.visible {
+  display: block;
+}
+
+.mastersBox__item {
+  position: relative;
+  text-decoration: none;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid #e0e0e0;
+  box-shadow: var(--shadow1);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.mastersBox__item:hover {
+  box-shadow: var(--shadow1hover);
+}
+
+.mastersBox__itemImg {
+  width: 100%;
+}
+
+.mastersBox__itemImg img {
+  display: block;
+  width: 100%;
+}
+
+.mastersBox__itemInfo {
+  padding: 30px;
+  width: 100%;
+  background: rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s;
+  flex: 1;
+}
+
+.mastersBox__itemInfoTitle {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  color: #4f4f4f;
+  padding: 0 0 1rem 0;
+  display: block;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.mastersBox__itemInfoTitle:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 30%;
+  height: 2px;
+  background: #4f4f4f;
+}
+
+.mastersBox__item:hover .mastersBox__itemInfoTitle {
+  color: var(--red1);
+}
+
+.mastersBox__itemInfoDesc {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: #4f4f4f;
+  padding: 1rem 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.mastersBox__itemInfoBottom {
+  margin-top: auto;
+}
+
+.mastersBox__itemInfoExperience {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 10px;
+  color: #4f4f4f;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mastersBox__itemInfoReviews {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  color: #4f4f4f;
+  padding: 5px 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

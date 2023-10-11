@@ -128,6 +128,7 @@ var myjsfiles = [
   'src/assets/js/firstJS.js',
   'src/assets/js/__gal.js',
   'src/assets/js/__price2.js',
+  'src/assets/js/__jsFilter.js',
   'src/assets/js/main.js',
   'src/assets/js/__resize.js',
 ];

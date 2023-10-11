@@ -1,0 +1,107 @@
+mixin masters3
+	.mastersBox__area
+		.title3
+			h1 Специалисты нашего центра
+		.mastersBox__outer
+			+mastersTagMenu
+			+mastersBox
+		.masterBox__content
+			.content
+				p Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut aliquam debitis officia voluptatibus vero repellat ab quia amet assumenda fuga. Quo, inventore, molestias, commodi sapiente necessitatibus soluta fugiat rerum impedit ullam dicta sequi saepe? Tempora molestiae nam quibusdam eaque sunt fugiat rem et nihil quisquam, voluptate minus dolorem, hic repellendus.
+				p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat, odit molestias hic accusantium odio repellendus expedita iste ut cumque porro officia unde dolorem voluptatem autem accusamus. Amet et deserunt laboriosam!
+				p Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, repellendus?
+
+
+mixin mastersTagMenu 
+	.mastersBox__outer
+		.filterTagMenuMobile__area
+			select.filterTagMenuMobile
+				option.filterTagMenuLink_mb.filterTagMenuLink__all(data-mb-id='all' selected='selected') Все специалисты
+				option.filterTagMenuLink_mb(data-mb-id='0' selected='selected') Медицина
+				option.filterTagMenuLink_mb(data-mb-id='1') Косметология
+				option.filterTagMenuLink_mb(data-mb-id='4') Менеджмент
+		nav.filterTagMenu__outer
+			ul.filterTagMenu
+				li.filterTagMenuLink.filterTagMenuLink__all(data-id='all')
+					span Все специалисты
+				li.filterTagMenuLink.active(data-id='0')
+					span Медицина
+				li.filterTagMenuLink(data-id='1')
+					span Косметология
+				li.filterTagMenuLink(data-id='4')
+					span Менеджмент
+
+mixin mastersBox 
+
+	.mastersBox
+		.mastersBox__itemOuter.jsFilterResultItem.visible(data-sid='4,0')
+			a.mastersBox__item(href='/specialist/korolev-aleksandr-yuryevich')
+				.mastersBox__itemImg(itemscope='' itemtype='https://schema.org/ImageObject')
+					meta(itemprop='name' content='Королёв Александр Юрьевич')
+					img(src='/.cache/img/sotrudniki2020/korolev-3-360-480.jpg' alt='Королёв Александр Юрьевич' itemprop='contentUrl')
+					meta(itemprop='description' content='Главный врач клиники антивозрастной медицины, к.м.н., онколог, уролог, нутрициолог')
+				.mastersBox__itemInfo
+					.mastersBox__itemInfoTitle Королёв Александр Юрьевич
+					.mastersBox__itemInfoDesc
+						span
+							| Главный врач клиники антивозрастной медицины, к.м.н., онколог, уролог, нутрициолог
+					.mastersBox__itemInfoExperience
+						| Стаж работы: 25 лет
+					.mastersBox__itemInfoBottom
+						.mastersBox__itemInfoReviews 12 отзывов
+		.mastersBox__itemOuter.jsFilterResultItem.hidden(data-sid='4')
+			a.mastersBox__item(href='/specialist/golbraih')
+				.mastersBox__itemImg(itemscope='' itemtype='https://schema.org/ImageObject')
+					meta(itemprop='name' content='Гольбрайх Геннадий Ефимович')
+					img(src='/.cache/img/sotrudniki2020/golbrayh-3-360-480.jpg' alt='Гольбрайх Геннадий Ефимович' itemprop='contentUrl')
+					meta(itemprop='description' content='Главный врач клиники косметологии')
+				.mastersBox__itemInfo
+					.mastersBox__itemInfoTitle Гольбрайх Геннадий Ефимович
+					.mastersBox__itemInfoDesc
+						span Главный врач клиники косметологии
+					.mastersBox__itemInfoExperience
+						| Стаж работы: 20 лет
+					.mastersBox__itemInfoBottom
+		.mastersBox__itemOuter.jsFilterResultItem.hidden(data-sid='1')
+			a.mastersBox__item(href='/specialist/chumakova-olga-vladimirovna')
+				.mastersBox__itemImg(itemscope='' itemtype='https://schema.org/ImageObject')
+					meta(itemprop='name' content='Чумакова Ольга Владимировна')
+					img(src='/.cache/img/sotrudniki2020/chumakova-3-360-480.jpg' alt='Чумакова Ольга Владимировна' itemprop='contentUrl')
+					meta(itemprop='description' content='Врач-косметолог')
+				.mastersBox__itemInfo
+					.mastersBox__itemInfoTitle Чумакова Ольга Владимировна
+					.mastersBox__itemInfoDesc
+						span Врач-косметолог
+					.mastersBox__itemInfoExperience
+						| Стаж работы: 21 год
+					.mastersBox__itemInfoBottom
+						.mastersBox__itemInfoReviews 33 отзыва
+		.mastersBox__itemOuter.jsFilterResultItem.hidden(data-sid='1')
+			a.mastersBox__item(href='/specialist/kayushkina-irina-gennadyevna')
+				.mastersBox__itemImg(itemscope='' itemtype='https://schema.org/ImageObject')
+					meta(itemprop='name' content='Каюшкина Ирина Геннадьевна')
+					img(src='/.cache/img/sotrudniki2020/kayushkina-3-360-480.jpg' alt='Каюшкина Ирина Геннадьевна' itemprop='contentUrl')
+					meta(itemprop='description' content='Врач-косметолог')
+				.mastersBox__itemInfo
+					.mastersBox__itemInfoTitle Каюшкина Ирина Геннадьевна
+					.mastersBox__itemInfoDesc
+						span Врач-косметолог
+						.presentation__videoBtn.presentation__videoBtn_inCard(title='Видеопрезентация специалиста' data-id='60f166b4002c7174527aa73e' onclick='LoadPresentationVideo(this); return false;')
+					.mastersBox__itemInfoExperience
+						| Стаж работы: 27 лет
+					.mastersBox__itemInfoBottom
+						.mastersBox__itemInfoReviews 32 отзыва
+		.mastersBox__itemOuter.jsFilterResultItem.hidden(data-sid='1')
+			a.mastersBox__item(href='/specialist/solod-ekaterina-olegovna')
+				.mastersBox__itemImg(itemscope='' itemtype='https://schema.org/ImageObject')
+					meta(itemprop='name' content='Солод Екатерина Олеговна')
+					img(src='/.cache/img/sotrudniki2020/solod-3-360-480.jpg' alt='Солод Екатерина Олеговна' itemprop='contentUrl')
+					meta(itemprop='description' content='Врач-косметолог')
+				.mastersBox__itemInfo
+					.mastersBox__itemInfoTitle Солод Екатерина Олеговна
+					.mastersBox__itemInfoDesc
+						span Врач-косметолог
+					.mastersBox__itemInfoExperience
+						| Стаж работы: 22 года
+					.mastersBox__itemInfoBottom
+						.mastersBox__itemInfoReviews 43 отзыва
