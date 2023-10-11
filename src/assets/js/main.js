@@ -1,23 +1,3 @@
-var $window;
-var prevWindowWidth = 0;
-var windowWidth;
-
-// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
-let vh = window.innerHeight * 0.01;
-// Then we set the value in the --vh custom property to the root of the document
-document.documentElement.style.setProperty('--vh', `${vh}px`);
-//in selector we set style, for example
-//height: calc(var(--vh, 1vh) * 100); for 100vh
-
-function initVars() {
-  $window = $(window);
-  windowWidth = $window.width();
-  windowHeight = $window.height();
-
-  let vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
-}
-
 $(function () {
   initVars();
   mainGallery();
@@ -199,7 +179,7 @@ $(function () {
   $('.phone2').mask('+7 (999) 999-9999');
   $('.phone3').mask('+7 (999) 999-9999');
 
-  $('table').wrap('<div class="table_outer"></div>');
+  $('.content > table').wrap('<div class="table_outer"></div>');
 
   $('.toTop').hide();
   $(window).on('scroll', function () {
@@ -210,8 +190,7 @@ $(function () {
     }
   });
   $('.toTop').on('click', function () {
-    $('body,html').animate(
-      {
+    $('body,html').animate({
         scrollTop: 0,
       },
       400
@@ -291,8 +270,7 @@ $(function () {
       });
     } else {
       $.post(
-        'mail1.php',
-        {
+        'mail1.php', {
           name: name,
           phone: phone,
           email: email,
@@ -390,8 +368,7 @@ $(function () {
       });
     } else {
       $.post(
-        'mailz.php',
-        {
+        'mailz.php', {
           name: name,
           phone: phone,
         },
@@ -461,22 +438,15 @@ if ($('.map__area').length) {
     var myGeoObjects = [];
 
     myGeoObjects[0] = new ymaps.Placemark(
-      [51.53636907237114, 46.022191999999926],
-      {
-        balloonContentHeader:
-          '<div class="baloon__top">Кэрос-медицина</div>' +
+      [51.53636907237114, 46.022191999999926], {
+        balloonContentHeader: '<div class="baloon__top">Кэрос-медицина</div>' +
           '<div class="baloon__description">IT-Компания</div>',
-        balloonContentBody:
-          '<div class="baloon__content"><div class="baloon__logo"><span class="gr">Кэрос</span><span class="or">MED</span></div>' +
+        balloonContentBody: '<div class="baloon__content"><div class="baloon__logo"><span class="gr">Кэрос</span><span class="or">MED</span></div>' +
           '<a href="mailto:info@keros-med.ru">info@keros-med.ru</a>',
-        balloonContentFooter:
-          '<div class="baloon__footer">Саратов, ул. Московская, 117</div>',
-        clusterCaption:
-          'Косметология<br>салон массажа<br>HAIR услуги<br>NAIL-BAR<br>профессиональная косметика',
-        hintContent:
-          '<div class="baloon__top">It-Компания "Кэрос-медицина"</div>',
-      },
-      {
+        balloonContentFooter: '<div class="baloon__footer">Саратов, ул. Московская, 117</div>',
+        clusterCaption: 'Косметология<br>салон массажа<br>HAIR услуги<br>NAIL-BAR<br>профессиональная косметика',
+        hintContent: '<div class="baloon__top">It-Компания "Кэрос-медицина"</div>',
+      }, {
         iconLayout: 'default#image',
         iconImageHref: 'assets/img/marker3.png',
         iconImageSize: [64, 64],
@@ -484,13 +454,11 @@ if ($('.map__area').length) {
       }
     );
 
-    var clusterIcons = [
-      {
-        href: '/images/pointer.png',
-        size: [29, 46],
-        offset: [0, 0],
-      },
-    ];
+    var clusterIcons = [{
+      href: '/images/pointer.png',
+      size: [29, 46],
+      offset: [0, 0],
+    }, ];
 
     var clusterer = new ymaps.Clusterer({
       clusterDisableClickZoom: false,

@@ -1,0 +1,92 @@
+.price__area {
+  position: relative;
+  min-height: 500px;
+}
+
+.price__outer {
+  position: relative;
+}
+
+.tabs {
+  position: relative;
+  width: 100%;
+}
+
+.tabs > ul > li {
+  list-style: none;
+}
+
+/* Стили для списка вкладок */
+.tab-header {
+  display: flex;
+  position: relative;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Стили для вкладки */
+.tab-header__item {
+  border-bottom: 4px solid transparent;
+  color: #424530;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 70px 60px;
+  cursor: pointer;
+}
+.tab-header__item:first-child {
+  padding: 70px 60px 70px 0;
+}
+
+/* Стили для активной вкладки */
+.tab-header__item.active {
+  border-bottom: 4px solid var(--dark);
+  color: var(--dark);
+}
+
+/* Стиль для списка контейнеров с содержимым вкладок */
+.tab-content {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Стили для контейнера с содержимым вкладки. По умолчанию скрыт. */
+.tab-content__item {
+  display: none;
+  padding: 0 0 80px 0;
+}
+
+/* Стили для активного контейнера вкладки */
+.tab-content__item.active {
+  display: block;
+}
+
+.tab-content__item table {
+  margin: 50px 0 0 0;
+  width: 100%;
+}
+
+.tab-content__item table tr td:last-child {
+  text-align: right;
+}
+
+.priceCellTitle {
+  padding: 30px 0 0 0;
+  color: #000;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: left;
+}
+
+.priceCell {
+  padding: 30px 0 0 0;
+  border-bottom: 1px solid var(--brown);
+  color: #000;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

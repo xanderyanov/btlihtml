@@ -70,30 +70,32 @@ var vendorsCssFiles = [
 gulp.task('vendorsCss', function () {
   return (
     gulp
-      .src(vendorsCssFiles, { base: 'assets/css' })
-      // .pipe(rigger()) //Прогоним через rigger
+    .src(vendorsCssFiles, {
+      base: 'assets/css'
+    })
+    // .pipe(rigger()) //Прогоним через rigger
 
-      .pipe(sourcemaps.init()) //Инициализируем sourcemap
-      .pipe(concatCss('vendors.css'))
-      .pipe(sourcemaps.write('.'))
-      .pipe(gulp.dest('build/assets/css'))
+    .pipe(sourcemaps.init()) //Инициализируем sourcemap
+    .pipe(concatCss('vendors.css'))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('build/assets/css'))
   );
 });
 
 gulp.task('image', function () {
   return (
     gulp
-      .src('src/assets/img/**/*.*') //Выберем наши картинки
-      // .pipe(
-      // 	imagemin({
-      // 		//Сожмем их
-      // 		progressive: true,
-      // 		svgoPlugins: [{ removeViewBox: false }],
-      // 		use: [pngquant()],
-      // 		// interlaced: true,
-      // 	})
-      // )
-      .pipe(gulp.dest('build/assets/img'))
+    .src('src/assets/img/**/*.*') //Выберем наши картинки
+    // .pipe(
+    // 	imagemin({
+    // 		//Сожмем их
+    // 		progressive: true,
+    // 		svgoPlugins: [{ removeViewBox: false }],
+    // 		use: [pngquant()],
+    // 		// interlaced: true,
+    // 	})
+    // )
+    .pipe(gulp.dest('build/assets/img'))
   );
 });
 
@@ -109,19 +111,23 @@ var vendorsJsFiles = [
 gulp.task('vendorsJs', function () {
   return (
     gulp
-      .src(vendorsJsFiles, { base: 'btlassets/js' })
-      // .pipe(rigger()) //Прогоним через rigger
-      .pipe(plumber())
-      .pipe(sourcemaps.init()) //Инициализируем sourcemap
-      .pipe(concat('vendors.js'))
-      .pipe(uglify()) //Сожмем наш js
-      .pipe(sourcemaps.write('.'))
-      .pipe(gulp.dest('build/assets/js'))
+    .src(vendorsJsFiles, {
+      base: 'btlassets/js'
+    })
+    // .pipe(rigger()) //Прогоним через rigger
+    .pipe(plumber())
+    .pipe(sourcemaps.init()) //Инициализируем sourcemap
+    .pipe(concat('vendors.js'))
+    .pipe(uglify()) //Сожмем наш js
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('build/assets/js'))
   );
 });
 
 var myjsfiles = [
+  'src/assets/js/firstJS.js',
   'src/assets/js/__gal.js',
+  'src/assets/js/__price2.js',
   'src/assets/js/main.js',
   'src/assets/js/__resize.js',
 ];
@@ -129,15 +135,17 @@ var myjsfiles = [
 gulp.task('myJs', function () {
   return (
     gulp
-      // .src("src/assets/js/**/*.js*")
-      // .src("src/assets/js/main.js")
-      .src(myjsfiles, { base: 'assets/js' })
-      .pipe(plumber())
-      .pipe(sourcemaps.init()) //Инициализируем sourcemap
-      .pipe(concat('app.js')) // в какой файл объединить
-      // .pipe(uglify()) //Сожмем наш js
-      .pipe(sourcemaps.write('.'))
-      .pipe(gulp.dest('build/assets/js'))
+    // .src("src/assets/js/**/*.js*")
+    // .src("src/assets/js/main.js")
+    .src(myjsfiles, {
+      base: 'assets/js'
+    })
+    .pipe(plumber())
+    .pipe(sourcemaps.init()) //Инициализируем sourcemap
+    .pipe(concat('app.js')) // в какой файл объединить
+    // .pipe(uglify()) //Сожмем наш js
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('build/assets/js'))
   );
 });
 
