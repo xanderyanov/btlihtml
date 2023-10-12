@@ -1,0 +1,66 @@
+.pagination {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 85px auto 0;
+  max-width: 1070px;
+}
+
+.xSwiperLeft,
+.xSwiperRight {
+  z-index: 10;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.xSwiperLeft:focus,
+.xSwiperRight:focus {
+  border: none;
+  outline: none;
+}
+
+.xSwiperLeft.disabled,
+.xSwiperRight.disabled {
+  display: none;
+}
+
+.xSwiperLeft i,
+.xSwiperRight i {
+  font-size: 56px;
+  color: var(--brown);
+  transition: all 0.3s;
+}
+
+.xSwiperLeft:hover i,
+.xSwiperRight:hover i {
+  color: var(--orange);
+}
+
+.swiper-button-lock {
+  display: none;
+}
+
+.xSwiperLeft {}
+
+.xSwiperRight {}
+
+.swiper-pagination {
+  bottom: auto !important;
+}
+
+
+.swiper-pagination .swiper-pagination-bullet {
+  width: 14px;
+  height: 14px;
+  border-radius: 100%;
+  background: var(--brown);
+  opacity: 1;
+  margin: 0 4px;
+}
+
+.swiper-pagination .swiper-pagination-bullet-active {
+  background: var(--orange);
+  opacity: 1;
+}

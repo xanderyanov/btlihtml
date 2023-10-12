@@ -63,6 +63,7 @@ gulp.task('css', function () {
 var vendorsCssFiles = [
   'node_modules/sweetalert/dist/sweetalert.css',
   'node_modules/swiper/swiper-bundle.min.css',
+  'node_modules/bootstrap/dist/css/bootstrap.min.css',
   'node_modules/font-awesome/css/font-awesome.min.css',
   'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.css',
 ];
@@ -130,6 +131,7 @@ var myjsfiles = [
   'src/assets/js/__price2.js',
   'src/assets/js/__jsFilter.js',
   'src/assets/js/__reviews.js',
+  'src/assets/js/__mob.js',
   'src/assets/js/main.js',
   'src/assets/js/__resize.js',
 ];
@@ -175,11 +177,11 @@ gulp.task('icomoon', function () {
     .pipe(gulp.dest('build/assets/icomoon'));
 });
 
-// gulp.task('video', function () {
-//   return gulp
-//     .src('src/assets/video/**/*.*')
-//     .pipe(gulp.dest('build/btlassets/video'));
-// });
+gulp.task('video', function () {
+  return gulp
+    .src('src/assets/video/**/*.*')
+    .pipe(gulp.dest('build/assets/video'));
+});
 
 gulp.task('clean', function () {
   return del('build');
@@ -194,6 +196,7 @@ gulp.task(
       'vendorsCss',
       'pug',
       'image',
+      'video',
       'fonts',
       'icomoon',
       'vendorsJs',

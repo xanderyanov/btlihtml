@@ -11,6 +11,10 @@ mixin header
           i.icon-ws
       .header__addr Саратов, ул. Московская, 117, 2 этаж, ТК «Мир»
       a.header__phone(href="tel:+78452759933")  +7 (8452)75-99-33
+      .header__menuBtn.leftSlideMenu_js
+        span
+        span
+        span
 
     ul.topMenu.w
       li
@@ -23,3 +27,47 @@ mixin header
         a(href="#") Прайс
       li
         a(href="#") Контакты
+
+
+mixin header0
+  .header__area 
+    header.header.w 
+      .logo1
+        a(href="#")
+          +logo1
+      .header__i 
+        a.i__item(href="#") 
+          i.icon-tg
+        a.i__item(href="#") 
+          i.icon-ws
+      .header__addr Саратов, ул. Московская, 117, 2 этаж, ТК «Мир»
+      a.header__phone(href="tel:+78452759933")  +7 (8452)75-99-33
+      .header__menuBtn.menuBtn__js
+        span
+        span
+        span
+
+mixin mobileMenu
+  .mobileMenu__area 
+    .mobileMenu
+      header.header.w 
+        .logo1
+          a(href="#")
+            +logo1
+        .header__menuBtn.menuBtn__close__js.open
+          span
+          span
+          span
+      .mob__content 
+        .header__i_mob 
+          a.i__item(href="#") 
+            i.icon-tg
+          a.i__item(href="#") 
+            i.icon-ws
+        .header__addr_mob Саратов, ул. Московская, 117, 2 этаж, ТК «Мир»
+        a.header__phone(href="tel:+78452759933")  +7 (8452)75-99-33
+        .header__time_mb ежедневно с 9:00 до 21:00
+
+
+
+

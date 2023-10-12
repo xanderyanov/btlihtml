@@ -104,71 +104,6 @@ $(function () {
   //   },
   // });
 
-  var commentsOptions = {};
-  if ($('.commentsCaroucel-container .commentsCaroucel-slide').length) {
-    commentsOptions = {
-      slidesPerView: 4,
-      loop: false,
-      spaceBetween: 0,
-      // centeredSlides: true,
-      speed: 600,
-      autoplay: {
-        delay: 15000,
-        disableOnInteraction: true,
-      },
-      navigation: {
-        nextEl: '.commentsCaroucel__right',
-        prevEl: '.commentsCaroucel__left',
-      },
-      keyboard: true,
-      watchOverflow: true,
-      pagination: {
-        el: '.commentsCaroucel__pagination',
-        type: 'bullets',
-        dynamicBullets: true,
-        clickable: true,
-      },
-      breakpoints: {
-        0: {
-          slidesPerView: 1,
-          spaceBetween: 0,
-        },
-        360: {
-          slidesPerView: 1.5,
-          spaceBetween: 0,
-        },
-        480: {
-          slidesPerView: 2,
-          spaceBetween: 0,
-        },
-        600: {
-          slidesPerView: 3,
-          spaceBetween: 0,
-        },
-        920: {
-          slidesPerView: 4,
-          spaceBetween: 0,
-        },
-      },
-    };
-  }
-  var swiper = new Swiper('.commentsCaroucel-container', commentsOptions);
-
-  $('.commentsCard__more').on('click', function () {
-    var Parent = $(this).closest('.commentsCard__textArea');
-    var AllText = Parent.find('.commentsCard__textAll');
-    var ShortText = Parent.find('.commentsCard__text');
-    if ($(this).hasClass('open')) {
-      $(this).removeClass('open').text('Читать весь отзыв');
-      AllText.slideUp();
-      ShortText.slideDown();
-    } else {
-      $(this).addClass('open').text('Свернуть');
-      AllText.slideDown();
-      ShortText.slideUp();
-    }
-  });
-
   $('.menuButton').on('click', function () {
     $(this).toggleClass('open');
     $('.topMenu').slideToggle();
@@ -190,206 +125,13 @@ $(function () {
     }
   });
   $('.toTop').on('click', function () {
-    $('body,html').animate({
+    $('body,html').animate(
+      {
         scrollTop: 0,
       },
       400
     );
     return false;
-  });
-
-  $('.form1').on('click', '.submit1', function (e) {
-    e.preventDefault();
-    var name = $('.name1').val();
-    var phone = $('.phone1').val();
-    var email = $('.email1').val();
-    var workemail = $('.work_email1').val();
-    var message = $('.message1').val();
-    var r = /^[\w\.\d-_]+@[\w\.\d-_]+\.\w{2,4}$/i;
-    if (name == '') {
-      swal({
-        title: 'Поле Имя пустое',
-        text: 'Заполните поле имя',
-        type: 'error',
-        confirmButtonText: 'ок',
-      });
-      $('.name1').addClass('error');
-      setTimeout(function () {
-        $('.name1').removeClass('error');
-      }, 3000);
-    } else if (phone == '') {
-      swal({
-        title: 'Поле Телефон пустое',
-        text: 'Заполните поле телефон',
-        type: 'error',
-        confirmButtonText: 'ок',
-      });
-      $('.phone1').addClass('error');
-      setTimeout(function () {
-        $('.phone1').removeClass('error');
-      }, 3000);
-    } else if (email == '') {
-      swal({
-        title: 'Ошибка Email',
-        text: 'Заполните поле Email',
-        type: 'error',
-        confirmButtonText: 'ок',
-      });
-      $('.email1').addClass('error');
-      setTimeout(function () {
-        $('.email1').removeClass('error');
-      }, 3000);
-    } else if (!r.test(email)) {
-      swal({
-        title: 'Ошибка',
-        text: 'Корректно заполните поле e-mail',
-        type: 'error',
-        confirmButtonText: 'ок',
-      });
-      $('.email1').addClass('error');
-      setTimeout(function () {
-        $('.email1').removeClass('error');
-      }, 3000);
-    } else if (message == '') {
-      swal({
-        title: 'Пустое сообщение',
-        text: 'Заполните текст сообщения',
-        type: 'error',
-        confirmButtonText: 'ок',
-      });
-      $('.message1').addClass('error');
-      setTimeout(function () {
-        $('.message1').removeClass('error');
-      }, 3000);
-    } else if (workemail != '') {
-      swal({
-        title: 'Ах ты жулик',
-        text: 'Уберите робота от компьютера',
-        type: 'error',
-        confirmButtonText: 'ок',
-      });
-    } else {
-      $.post(
-        'mail1.php', {
-          name: name,
-          phone: phone,
-          email: email,
-          message: message,
-        },
-        function () {
-          swal({
-            title: 'Спасибо',
-            text: 'Ваше сообщение отправлено',
-            type: 'success',
-            confirmButtonText: 'ок',
-          });
-          $('.name1').val('').removeClass('error');
-          $('.phone1').val('').removeClass('error');
-          $('.email1').val('').removeClass('error');
-          $('.message1').val('').removeClass('error');
-        }
-      );
-    }
-  });
-
-  $('.js_btnZ').on('click', function (e) {
-    e.preventDefault();
-    e.stopPropagation();
-    var self = $(this);
-    if (self.hasClass('js_active')) {
-      self.removeClass('js_active');
-      $('.js_containerZ')
-        .addClass('bounceOutUp')
-        .removeClass('bounceInDown')
-        .fadeOut(600);
-      $('.overlay').fadeOut(200);
-    } else {
-      self.addClass('js_active');
-      $('.js_containerZ')
-        .removeClass('bounceOutUp')
-        .addClass('bounceInDown')
-        .fadeIn(200);
-      $('.overlay').fadeIn(200);
-    }
-  });
-  $('.overlay').on('click', function (e) {
-    e.preventDefault();
-    $('.js_containerZ')
-      .addClass('bounceOutUp')
-      .removeClass('bounceInDown')
-      .fadeOut(600);
-    $('.js_btnZ').removeClass('js_active');
-
-    $('.overlay').fadeOut(600);
-  });
-  $('.formClose').on('click', function (e) {
-    e.preventDefault();
-    $('.js_containerZ')
-      .addClass('bounceOutUp')
-      .removeClass('bounceInDown')
-      .fadeOut(600);
-    $('.js_btnZ').removeClass('js_active');
-    $('.overlay').fadeOut(600);
-  });
-
-  $('.formZ').on('click', '.submitZ', function (e) {
-    e.preventDefault();
-    var name = $('.nameZ').val();
-    var phone = $('.phoneZ').val();
-    var workemail = $('.work_emailZ').val();
-    if (name == '') {
-      swal({
-        title: 'Поле Имя пустое',
-        text: 'Заполните поле имя',
-        type: 'error',
-        confirmButtonText: 'ок',
-      });
-      $('.nameZ').addClass('nameZ');
-      setTimeout(function () {
-        $('.nameZ').removeClass('error');
-      }, 3000);
-    } else if (phone == '') {
-      swal({
-        title: 'Поле Телефон пустое',
-        text: 'Заполните поле телефон',
-        type: 'error',
-        confirmButtonText: 'ок',
-      });
-      $('.phoneZ').addClass('phoneZ');
-      setTimeout(function () {
-        $('.phoneZ').removeClass('error');
-      }, 3000);
-    } else if (workemail != '') {
-      swal({
-        title: 'Ах ты жулик',
-        text: 'Уберите робота от компьютера',
-        type: 'error',
-        confirmButtonText: 'ок',
-      });
-    } else {
-      $.post(
-        'mailz.php', {
-          name: name,
-          phone: phone,
-        },
-        function () {
-          swal({
-            title: 'Спасибо',
-            text: 'Ваше сообщение отправлено',
-            type: 'success',
-            confirmButtonText: 'ок',
-          });
-          $('.nameZ').val('').removeClass('error');
-          $('.phoneZ').val('').removeClass('error');
-          $('.js_btn1').removeClass('js-Active');
-          $('.js_containerZ')
-            .addClass('bounceOutUp')
-            .removeClass('bounceInDown')
-            .fadeOut(600);
-          $('.overlay').fadeOut(200);
-        }
-      );
-    }
   });
 });
 
@@ -438,27 +180,36 @@ if ($('.map__area').length) {
     var myGeoObjects = [];
 
     myGeoObjects[0] = new ymaps.Placemark(
-      [51.53636907237114, 46.022191999999926], {
-        balloonContentHeader: '<div class="baloon__top">Кэрос-медицина</div>' +
+      [51.53636907237114, 46.022191999999926],
+      {
+        balloonContentHeader:
+          '<div class="baloon__top">Кэрос-медицина</div>' +
           '<div class="baloon__description">IT-Компания</div>',
-        balloonContentBody: '<div class="baloon__content"><div class="baloon__logo"><span class="gr">Кэрос</span><span class="or">MED</span></div>' +
+        balloonContentBody:
+          '<div class="baloon__content"><div class="baloon__logo"><span class="gr">Кэрос</span><span class="or">MED</span></div>' +
           '<a href="mailto:info@keros-med.ru">info@keros-med.ru</a>',
-        balloonContentFooter: '<div class="baloon__footer">Саратов, ул. Московская, 117</div>',
-        clusterCaption: 'Косметология<br>салон массажа<br>HAIR услуги<br>NAIL-BAR<br>профессиональная косметика',
-        hintContent: '<div class="baloon__top">It-Компания "Кэрос-медицина"</div>',
-      }, {
+        balloonContentFooter:
+          '<div class="baloon__footer">Саратов, ул. Московская, 117</div>',
+        clusterCaption:
+          'Косметология<br>салон массажа<br>HAIR услуги<br>NAIL-BAR<br>профессиональная косметика',
+        hintContent:
+          '<div class="baloon__top">It-Компания "Кэрос-медицина"</div>',
+      },
+      {
         iconLayout: 'default#image',
-        iconImageHref: 'assets/img/marker3.png',
+        iconImageHref: 'assets/img/marker.png',
         iconImageSize: [64, 64],
         iconImageOffset: [-32, -32],
       }
     );
 
-    var clusterIcons = [{
-      href: '/images/pointer.png',
-      size: [29, 46],
-      offset: [0, 0],
-    }, ];
+    var clusterIcons = [
+      {
+        href: '/images/pointer.png',
+        size: [29, 46],
+        offset: [0, 0],
+      },
+    ];
 
     var clusterer = new ymaps.Clusterer({
       clusterDisableClickZoom: false,

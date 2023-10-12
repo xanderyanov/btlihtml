@@ -1,0 +1,34 @@
+mixin commentsCaroucel
+  .commentsCaroucel__outer.w
+    .title1
+      h2 Отзывы
+    .commentsCaroucel
+      .swiper-container.commentsCaroucel-container
+        .swiper-wrapper.commentsCaroucel-wrapper
+          each item in comments
+            .swiper-slide.commentsCaroucel-slide
+              .commentsCard__outer(id=item.id)
+                .commentsCard
+                  .commentsCard__doktor
+                    .commentsCard__doktorAvatar
+                      img(src=item.avatar, alt=item.Name)
+                    .commentsCard__doktorInfo
+                      a.commentsCard__doktorInfoLink(href="#" target="_blank")
+                        span.commentsCard__doktorTitle Специалист:
+                        span.commentsCard__doktorName!= item.doktorName 
+                        span.commentsCard__doctorPosition!= item.doktorPosition
+                      .btn2 Записаться
+                  .commentsCard__author!= item.Name
+                  .commentsCard__textArea
+                    .commentsCard__text!= item.text 
+                    if item.fulltext
+                      .commentsCard__textAll!= item.fulltext
+                    if item.fulltext
+                      .commentsCard__more Читать весь отзыв
+                  .commentsCard__date!= item.date
+      .pagination
+        .commentsCaroucel__left.xSwiperLeft
+          i.icon-left
+        .swiper-pagination.commentsCaroucel__pagination
+        .commentsCaroucel__right.xSwiperRight
+          i.icon-right

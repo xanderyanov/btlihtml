@@ -9,6 +9,7 @@ include __imgBlocks
 include __price2
 include __masters
 include __reviews
+include __contacts
 include __forms
 include __footer
 
@@ -27,16 +28,22 @@ body
 
     .site__center
       .firstScreen(style="background-image: url(assets/img/bg1.png)") 
+        video(preload='auto' autoplay='true' loop='loop' muted='muted' volume='0')
+          source(src='assets/video/btli1.mp4' type='video/mp4')
+          //- source(src='btlassets/video/klin2.mp4' type='video/webm')
         .firstScreen__info
           h1 Имидж студия Бьюти Лаунж
           span Твой образ от «А» до «Я»
           .bigBtn.bigBtn_first Записаться
+        //- +mobileMenu
       +mainGal
       +imgBlock1
       +price2
       +imgBlock2
       +masters3
       +imgBlock3
+      +commentsCaroucel
+      +contacts
 
 
 

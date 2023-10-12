@@ -53,8 +53,8 @@ function mainGallery() {
         },
       },
     };
+    var swiper123 = new Swiper('.mainGallery-container', options_mainGallery);
   }
-  var swiper123 = new Swiper('.mainGallery-container', options_mainGallery);
 
   // swiper123.on('slideChange', function () {
   //   console.log('beforeSlideChangeStart');

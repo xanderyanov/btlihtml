@@ -1,0 +1,163 @@
+.commentsCaroucel__outer {
+  padding-bottom: 80px;
+}
+
+.commentsCaroucel {
+  width: 100%;
+  padding: 0;
+  position: relative;
+}
+
+.commentsCaroucel-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.commentsCaroucel-wrapper {
+  height: auto;
+}
+
+.commentsCaroucel-slide {
+  height: auto;
+  display: flex;
+}
+
+.commentsCaroucel__left,
+.commentsCaroucel__right {
+  position: absolute;
+  top: 50%;
+  margin-top: -27px;
+  z-index: 10;
+}
+
+.commentsCaroucel__left {
+  left: -27px;
+
+  .at-max(1200px, {
+    left: -6px;
+  });
+}
+
+.commentsCaroucel__right {
+  right: -27px;
+
+  .at-max(1200px, {
+    right: -6px;
+  });
+}
+
+.commentsCaroucel__pagination {}
+
+
+
+.commentsCard__outer {
+  position: relative;
+}
+
+.commentsCard {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 20px 30px;
+  border-left: 2px solid var(--orange);
+  height: 100%;
+}
+
+.commentsCard__doktor {
+  display: flex;
+  margin-bottom: 55px;
+}
+
+.commentsCard__doktorAvatar {
+  width: 30%;
+}
+
+.commentsCard__doktorAvatar img {
+  display: block;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.commentsCard__doktorInfo {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 0 26px;
+  width: 70%;
+  height: 100%;
+}
+
+.commentsCard__doktorInfoLink {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+
+}
+
+.commentsCard__doktorTitle {
+  color: #000;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  display: block;
+}
+
+.commentsCard__doktorName,
+.commentsCard__doctorPosition {
+  color: #000;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  display: block;
+}
+
+.commentsCard__doktorInfo .btn2 {
+  margin-top: auto;
+}
+
+
+.commentsCard__author {
+  color: #000;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 25px;
+}
+
+.commentsCard__textArea {
+  margin-bottom: 30px;
+}
+
+.commentsCard__text,
+.commentsCard__textAll {
+  color: #000;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.commentsCard__textAll {
+  display: none;
+}
+
+.commentsCard__more {
+  color: #000;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.commentsCard__date {
+  margin-top: auto;
+  color: var(--gray);
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

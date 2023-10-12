@@ -36,10 +36,65 @@ body {
 .firstScreen {
 	width: 100%;
 	height: calc(var(--vh, 1vh) * 100);
+	// height: 100vh;
 	background-size: cover;
 	background-repeat: no-repeat;
+	background-position: center center;
 	display: flex;
 	align-items: center;
+	position: relative;
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: rgba(0, 0, 0, .5);
+	}
+
+}
+
+
+.firstScreen>video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+	display: block;
+
+	// .at-max(480px, {
+	//   display: none;
+	// });
+}
+
+/* 1. Если не поддерживает support: */
+@media (min-aspect-ratio: 16/9) {
+	.firstScreen>video {
+		height: 300%;
+		top: -100%;
+	}
+}
+
+@media (max-aspect-ratio: 16/9) {
+	.firstScreen>video {
+		width: 300%;
+		left: -100%;
+	}
+}
+
+/* 2. Если поддерживает object-fit, overriding (1): */
+@supports (object-fit: cover) {
+	.firstScreen>video {
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
 }
 
 .firstScreen__info {
@@ -48,10 +103,17 @@ body {
 	justify-content: center;
 	margin: 0 auto;
 	padding: 170px 0 0 0;
+	position: relative;
+	z-index: 10;
+}
+
+.firstScreen__info_0 {
+	padding: 0;
 }
 
 .firstScreen__info h1 {
 	color: var(--light);
+	text-align: center;
 }
 
 .firstScreen__info span {
@@ -61,6 +123,10 @@ body {
 	font-style: normal;
 	font-weight: 400;
 	line-height: normal;
+
+	.at-max(480px, {
+		font-size: 22px;
+	});
 }
 
 
@@ -100,6 +166,7 @@ body {
 
 .btn2 {
 	width: 80%;
+	max-width: 250px;
 	border-radius: 40px;
 	color: #FFF;
 	text-align: center;

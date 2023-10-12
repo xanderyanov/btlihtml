@@ -1,0 +1,172 @@
+- var pageTitle = 'Имидж-центр Бьюти Лаунж'
+- var seoKeywords = ''
+- var seoDesc = ''
+
+include __const
+include __header
+include __gal
+include __imgBlocks
+include __price2
+include __masters
+include __reviews
+include __contacts
+include __forms
+include __footer
+
+
+
+
+
+<!DOCTYPE html>
+html(lang="ru-RU")
+  +head
+body
+  .site
+    .site__header
+      +header0
+
+
+    .site__center
+      .container.mailing
+        .row.py-3.py-sm-5
+          .col-12.mb-3.mb-sm-5
+            .mailing__desc.mb-2(style='color: var(--color1); font-weight: 400;')
+              | @Model.FolioRef.Value.Moment.ToOffset(Digest.DefaultBranch.MinuteOffset).ToString("dd MMMM yyyy", cultureInfo) вы были @who
+            .mailing__desc
+              | Поделитесь, пожалуйста, впечатлениями от визита. Мы сохраним в тайне от наших специалистов ваши оценки:
+          form.form.col-12.col-lg-8.mx-auto
+            .starGroup.row.mb-4.mb-sm-4
+              .starGroup__title.col-12.col-sm-6 Работа администратора:
+              .starGroup__inner.col-12.col-sm-6
+                fieldset#gr1.rating-area_1
+                  input#star-101(type='radio' name='gr1' value='10')
+                  label(for='star-101' title='Оценка «10»')
+                  input#star-91(type='radio' name='gr1' value='9')
+                  label(for='star-91' title='Оценка «9»')
+                  input#star-81(type='radio' name='gr1' value='8')
+                  label(for='star-81' title='Оценка «8»')
+                  input#star-71(type='radio' name='gr1' value='7')
+                  label(for='star-71' title='Оценка «7»')
+                  input#star-61(type='radio' name='gr1' value='6')
+                  label(for='star-61' title='Оценка «6»')
+                  input#star-51(type='radio' name='gr1' value='5')
+                  label(for='star-51' title='Оценка «5»')
+                  input#star-41(type='radio' name='gr1' value='4')
+                  label(for='star-41' title='Оценка «4»')
+                  input#star-31(type='radio' name='gr1' value='3')
+                  label(for='star-31' title='Оценка «3»')
+                  input#star-21(type='radio' name='gr1' value='2')
+                  label(for='star-21' title='Оценка «2»')
+                  input#star-11(type='radio' name='gr1' value='1')
+                  label(for='star-11' title='Оценка «1»')
+            .starGroup.row.mb-4.mb-sm-4
+              .starGroup__title.col-12.col-sm-6 Работа специалиста:
+              .starGroup__inner.col-12.col-sm-6
+                fieldset#gr2.rating-area_2
+                  input#star-102(type='radio' name='gr2' value='10')
+                  label(for='star-102' title='Оценка «10»')
+                  input#star-92(type='radio' name='gr2' value='9')
+                  label(for='star-92' title='Оценка «9»')
+                  input#star-82(type='radio' name='gr2' value='8')
+                  label(for='star-82' title='Оценка «8»')
+                  input#star-72(type='radio' name='gr2' value='7')
+                  label(for='star-72' title='Оценка «7»')
+                  input#star-62(type='radio' name='gr2' value='6')
+                  label(for='star-62' title='Оценка «6»')
+                  input#star-52(type='radio' name='gr2' value='5')
+                  label(for='star-52' title='Оценка «5»')
+                  input#star-42(type='radio' name='gr2' value='4')
+                  label(for='star-42' title='Оценка «4»')
+                  input#star-32(type='radio' name='gr2' value='3')
+                  label(for='star-32' title='Оценка «3»')
+                  input#star-22(type='radio' name='gr2' value='2')
+                  label(for='star-22' title='Оценка «2»')
+                  input#star-12(type='radio' name='gr2' value='1')
+                  label(for='star-12' title='Оценка «1»')
+            .starGroup.row.mb-4.mb-sm-4
+              .starGroup__title.col-12.col-sm-6 Доступность и качество телефонных консультаций:
+              .starGroup__inner.col-12.col-sm-6
+                fieldset#gr3.rating-area_3
+                  input#star-103(type='radio' name='gr3' value='10')
+                  label(for='star-103' title='Оценка «10»')
+                  input#star-93(type='radio' name='gr3' value='9')
+                  label(for='star-93' title='Оценка «9»')
+                  input#star-83(type='radio' name='gr3' value='8')
+                  label(for='star-83' title='Оценка «8»')
+                  input#star-73(type='radio' name='gr3' value='7')
+                  label(for='star-73' title='Оценка «7»')
+                  input#star-63(type='radio' name='gr3' value='6')
+                  label(for='star-63' title='Оценка «6»')
+                  input#star-53(type='radio' name='gr3' value='5')
+                  label(for='star-53' title='Оценка «5»')
+                  input#star-43(type='radio' name='gr3' value='4')
+                  label(for='star-43' title='Оценка «4»')
+                  input#star-33(type='radio' name='gr3' value='3')
+                  label(for='star-33' title='Оценка «3»')
+                  input#star-23(type='radio' name='gr3' value='2')
+                  label(for='star-23' title='Оценка «2»')
+                  input#star-13(type='radio' name='gr3' value='1')
+                  label(for='star-13' title='Оценка «1»')
+            .starGroup.row.mb-4.mb-sm-4
+              .starGroup__title.col-12.col-sm-6 Чистота:
+              .starGroup__inner.col-12.col-sm-6
+                fieldset#gr4.rating-area_4
+                  input#star-104(type='radio' name='gr4' value='10')
+                  label(for='star-104' title='Оценка «10»')
+                  input#star-94(type='radio' name='gr4' value='9')
+                  label(for='star-94' title='Оценка «9»')
+                  input#star-84(type='radio' name='gr4' value='8')
+                  label(for='star-84' title='Оценка «8»')
+                  input#star-74(type='radio' name='gr4' value='7')
+                  label(for='star-74' title='Оценка «7»')
+                  input#star-64(type='radio' name='gr4' value='6')
+                  label(for='star-64' title='Оценка «6»')
+                  input#star-54(type='radio' name='gr4' value='5')
+                  label(for='star-54' title='Оценка «5»')
+                  input#star-44(type='radio' name='gr4' value='4')
+                  label(for='star-44' title='Оценка «4»')
+                  input#star-34(type='radio' name='gr4' value='3')
+                  label(for='star-34' title='Оценка «3»')
+                  input#star-24(type='radio' name='gr4' value='2')
+                  label(for='star-24' title='Оценка «2»')
+                  input#star-14(type='radio' name='gr4' value='1')
+                  label(for='star-14' title='Оценка «1»')
+            .starGroup.row.mb-4.mb-sm-4
+              .starGroup__title.col-12.col-sm-6 С какой вероятностью Вы порекомендуете Бьюти Лаунж знакомым?
+              .starGroup__inner.col-12.col-sm-6
+                fieldset#gr5.rating-area_5
+                  input#star-105(type='radio' name='gr5' value='10')
+                  label(for='star-105' title='Оценка «10»')
+                  input#star-95(type='radio' name='gr5' value='9')
+                  label(for='star-95' title='Оценка «9»')
+                  input#star-85(type='radio' name='gr5' value='8')
+                  label(for='star-85' title='Оценка «8»')
+                  input#star-75(type='radio' name='gr5' value='7')
+                  label(for='star-75' title='Оценка «7»')
+                  input#star-65(type='radio' name='gr5' value='6')
+                  label(for='star-65' title='Оценка «6»')
+                  input#star-55(type='radio' name='gr5' value='5')
+                  label(for='star-55' title='Оценка «5»')
+                  input#star-45(type='radio' name='gr5' value='4')
+                  label(for='star-45' title='Оценка «4»')
+                  input#star-35(type='radio' name='gr5' value='3')
+                  label(for='star-35' title='Оценка «3»')
+                  input#star-25(type='radio' name='gr5' value='2')
+                  label(for='star-25' title='Оценка «2»')
+                  input#star-15(type='radio' name='gr5' value='1')
+                  label(for='star-15' title='Оценка «1»')
+            .starGroup.row.mb-4.mb-sm-4
+              .starGroup__title.col-12.mb-2
+                | Если у Вас есть замечания или пожелания к работе Бьюти Лаунж, будем благодарны за Ваш комментарий:
+              .starGroup__inner.col-12
+                textarea#exampleFormControlTextarea1.form-control(rows='4')
+            .starGroup.row
+              .starGroup__inner.col-12.d-flex.d-sm-block.justify-content-center.justify-content-start
+                button.btn.btn-primary(type='button') Отправить 
+
+    .site__footer
+
+
+
+  +scripts
+
